@@ -1,0 +1,14 @@
+services:
+  - type: web                 # Tipo de servicio: una aplicación web que corre en un servidor
+    name: recomendaciones-backend  # Nombre del servicio
+    env: node                  # Entorno de ejecución: Node.js
+    plan: free                 # Plan del servicio (gratis)
+    region: oregon             # Región del servidor
+    buildCommand: npm install  # Comando para instalar dependencias
+    startCommand: node index.js # Comando para iniciar tu servidor
+    rootDir: backend           # Carpeta raíz de tu backend
+    envVars:
+      - key: MONGO_URI         # Variable de entorno para tu conexión a MongoDB
+        value: <tu URI de MongoDB Atlas>
+      - key: OPENROUTER_API_KEY # Variable de entorno para tu API
+        value: <tu clave API de OpenRouter>
